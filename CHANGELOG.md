@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Fix npm `bin` entry so global `xsearchlane` CLI installs correctly
+
 ## 0.1.0
 
 - Initial release: MCP server, CLI, SDK client, mock provider

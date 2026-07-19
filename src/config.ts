@@ -1,6 +1,6 @@
 import type { XSearchLaneConfig, XSearchProviderName } from './types.js'
 
-export const VERSION = '0.1.0'
+export const VERSION = '0.1.1'
 export const SERVICE = 'xsearchlane'
 
 export function loadConfig(overrides: XSearchLaneConfig = {}): Required<

@@ -132,4 +132,15 @@ async function main() {
   }
 }
 
-main()
+export { main }
+
+const isDirect =
+  process.argv[1] &&
+  (process.argv[1].endsWith('/cli.js') ||
+    process.argv[1].endsWith('\\cli.js') ||
+    process.argv[1].endsWith('/xsearchlane.js') ||
+    process.argv[1].endsWith('xsearchlane'))
+
+if (isDirect) {
+  main()
+}

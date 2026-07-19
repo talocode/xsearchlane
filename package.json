@@ -1,6 +1,6 @@
 {
   "name": "@talocode/xsearchlane",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Realtime X (Twitter) search for agents — MCP server, CLI, SDK, and hosted API",
   "type": "module",
   "bin": {
@@ -48,7 +48,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/talocode/xsearchlane"
+    "url": "git+https://github.com/talocode/xsearchlane.git"
   },
   "homepage": "https://github.com/talocode/xsearchlane#readme",
   "bugs": {
