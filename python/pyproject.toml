@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "talocode-xsearchlane"
+version = "0.1.0"
+description = "Realtime X search for agents — Python SDK and CLI for Talocode XSearchLane (/v1/xsearchlane/*)"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Talocode", email = "talocode@users.noreply.github.com"}]
+keywords = [
+  "x",
+  "twitter",
+  "x-search",
+  "agents",
+  "mcp",
+  "social-search",
+  "talocode",
+  "sdk",
+  "cli",
+  "realtime",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/talocode/xsearchlane"
+Documentation = "https://docs.talocode.site"
+Repository = "https://github.com/talocode/xsearchlane"
+Issues = "https://github.com/talocode/xsearchlane/issues"
+Changelog = "https://github.com/talocode/xsearchlane/releases"
+PyPI = "https://pypi.org/project/talocode-xsearchlane/"
+
+[project.scripts]
+xsearchlane = "xsearchlane.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["xsearchlane*"]

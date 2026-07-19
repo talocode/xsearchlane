@@ -1,8 +1,10 @@
 #!/usr/bin/env node
+import { VERSION } from './config.js'
 import {
   getCapabilities,
   getPricing,
   health,
+  resolveProvider,
   runXResearch,
   runXSearch,
 } from './engine.js'
@@ -14,6 +16,7 @@ Usage:
   xsearchlane search --query "..." [--handles a,b] [--exclude c,d] [--from YYYY-MM-DD] [--to YYYY-MM-DD]
   xsearchlane research --query "..."
   xsearchlane health
+  xsearchlane doctor
   xsearchlane pricing
   xsearchlane capabilities
   xsearchlane mcp
@@ -25,6 +28,31 @@ Env:
   XSEARCHLANE_PROVIDER     auto | xai | talocode | mock
 `)
   process.exit(1)
+}
+
+function doctor() {
+  const hasXaiKey = Boolean(process.env.XAI_API_KEY)
+  const hasTalocodeKey = Boolean(process.env.TALOCODE_API_KEY)
+  return {
+    ok: true,
+    service: 'xsearchlane',
+    version: VERSION,
+    node: process.version,
+    providerEnv: process.env.XSEARCHLANE_PROVIDER || 'auto',
+    resolvedProvider: resolveProvider(),
+    hasXaiKey,
+    hasTalocodeKey,
+    xaiBaseUrl: process.env.XAI_BASE_URL || 'https://api.x.ai/v1',
+    talocodeBaseUrl: process.env.TALOCODE_BASE_URL || 'https://api.talocode.site',
+    xaiModel: process.env.XAI_MODEL || 'grok-4.5',
+    tips: [
+      hasXaiKey || hasTalocodeKey
+        ? 'Live provider key detected'
+        : 'No provider key — searches will use mock mode',
+      'MCP: node dist/mcp/server.js or xsearchlane mcp',
+      'Hosted routes: POST /v1/xsearchlane/search (15cr), /research (40cr)',
+    ],
+  }
 }
 
 function parseArgs() {
@@ -81,6 +109,9 @@ async function main() {
       }
       case 'health':
         process.stdout.write(JSON.stringify(health(), null, 2) + '\n')
+        break
+      case 'doctor':
+        process.stdout.write(JSON.stringify(doctor(), null, 2) + '\n')
         break
       case 'pricing':
         process.stdout.write(JSON.stringify(getPricing(), null, 2) + '\n')
