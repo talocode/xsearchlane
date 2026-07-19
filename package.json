@@ -1,0 +1,69 @@
+{
+  "name": "@talocode/xsearchlane",
+  "version": "0.1.0",
+  "description": "Realtime X (Twitter) search for agents — MCP server, CLI, SDK, and hosted API",
+  "type": "module",
+  "bin": {
+    "xsearchlane": "./bin/xsearchlane.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "bin",
+    "docs",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/cli.js",
+    "mcp": "node dist/mcp/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --import tsx --test tests/*.test.ts",
+    "pack:check": "npm pack --dry-run"
+  },
+  "keywords": [
+    "x",
+    "twitter",
+    "x-search",
+    "mcp",
+    "agents",
+    "social-search",
+    "talocode",
+    "cli",
+    "sdk",
+    "realtime"
+  ],
+  "author": "Talocode",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talocode/xsearchlane"
+  },
+  "homepage": "https://github.com/talocode/xsearchlane#readme",
+  "bugs": {
+    "url": "https://github.com/talocode/xsearchlane/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0",
+    "tsx": "^4.19.0"
+  }
+}

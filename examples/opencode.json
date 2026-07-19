@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "xsearchlane": {
+      "type": "local",
+      "command": ["npx", "-y", "@talocode/xsearchlane", "mcp"],
+      "environment": {
+        "XAI_API_KEY": "{env:XAI_API_KEY}",
+        "XSEARCHLANE_PROVIDER": "auto"
+      }
+    }
+  }
+}
