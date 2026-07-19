@@ -21,3 +21,5 @@ python/.venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+demo/frames/
+*.tgz

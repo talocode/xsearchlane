@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:04,000
+XSearchLane — realtime X search for agents
+
+2
+00:00:04,000 --> 00:00:08,000
+Agents need live social signal from X
+
+3
+00:00:08,000 --> 00:00:12,000
+search · research · handles · dates · citations
+
+4
+00:00:12,000 --> 00:00:17,000
+CLI: xsearchlane search | research | doctor
+
+5
+00:00:17,000 --> 00:00:22,000
+MCP for OpenCode and coding agents
+
+6
+00:00:22,000 --> 00:00:27,000
+Core → xai · talocode · mock providers
+
+7
+00:00:27,000 --> 00:00:32,000
+Hosted: search 15cr · research 40cr
+
+8
+00:00:32,000 --> 00:00:36,000
+npm i @talocode/xsearchlane · pip install talocode-xsearchlane

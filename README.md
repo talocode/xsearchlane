@@ -18,6 +18,34 @@ Agents need social signal, not just static web pages. XSearchLane turns realtime
 
 Part of [Talocode](https://talocode.site): open tools people trust, hosted power behind them.
 
+## Architecture
+
+![XSearchLane Architecture](demo/architecture.png)
+
+```
+Agents (OpenCode / CLI / SDK)
+        │
+        ▼
+   XSearchLane core
+   runXSearch · runXResearch · MCP
+        │
+   ┌────┼────────────┐
+   ▼    ▼            ▼
+  xai  talocode     mock
+(direct) (hosted)  (offline)
+```
+
+## Demo
+
+[![XSearchLane demo](demo/architecture.png)](https://github.com/talocode/xsearchlane/releases/download/v0.1.1/xsearchlane-demo.mp4)
+
+Watch the demo: **[xsearchlane-demo.mp4](https://github.com/talocode/xsearchlane/releases/download/v0.1.1/xsearchlane-demo.mp4)** (release asset)
+
+```bash
+# regenerate locally
+cd demo && bash make-video.sh
+```
+
 ## Install
 
 ```bash
@@ -30,7 +58,7 @@ Or without install:
 npx @talocode/xsearchlane@latest health
 ```
 
-Python (planned package name):
+Python:
 
 ```bash
 pip install talocode-xsearchlane
